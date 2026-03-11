@@ -1,0 +1,48 @@
+### Login para obtener token
+POST http://localhost:5204/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "1234"
+}
+
+### Usar token en endpoint seguro
+GET http://localhost:5204/api/auth/secure
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzczMjQwNTU1LCJleHAiOjE3NzMyNDQxNTUsImlhdCI6MTc3MzI0MDU1NX0.-3_YoFWKs5YyLLjGxCRTWFRtBsZM5VEvgqcbfs3YW9w
+
+### Crear usuario nuevo
+POST http://localhost:5204/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzczMjQwNTU1LCJleHAiOjE3NzMyNDQxNTUsImlhdCI6MTc3MzI0MDU1NX0.-3_YoFWKs5YyLLjGxCRTWFRtBsZM5VEvgqcbfs3YW9w
+Content-Type: application/json
+
+{
+  "id": 4,
+  "name": "Lucía",
+  "email": "lucia@example.com",
+  "age": 22
+}
+
+### Obtener todos los usuarios
+GET http://localhost:5204/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzczMjQwNTU1LCJleHAiOjE3NzMyNDQxNTUsImlhdCI6MTc3MzI0MDU1NX0.-3_YoFWKs5YyLLjGxCRTWFRtBsZM5VEvgqcbfs3YW9w
+
+### Obtener un usuario específico
+GET http://localhost:5204/api/users/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzczMjQwNTU1LCJleHAiOjE3NzMyNDQxNTUsImlhdCI6MTc3MzI0MDU1NX0.-3_YoFWKs5YyLLjGxCRTWFRtBsZM5VEvgqcbfs3YW9w
+
+### Actualizar usuario existente
+PUT http://localhost:5204/api/users/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzczMjQwNTU1LCJleHAiOjE3NzMyNDQxNTUsImlhdCI6MTc3MzI0MDU1NX0.-3_YoFWKs5YyLLjGxCRTWFRtBsZM5VEvgqcbfs3YW9w
+Content-Type: application/json
+
+{
+  "id": 4,
+  "name": "Lucía Gómez",
+  "email": "lucia.gomez@example.com",
+  "age": 23
+}
+
+### Eliminar usuario
+DELETE http://localhost:5204/api/users/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzczMjQwNTU1LCJleHAiOjE3NzMyNDQxNTUsImlhdCI6MTc3MzI0MDU1NX0.-3_YoFWKs5YyLLjGxCRTWFRtBsZM5VEvgqcbfs3YW9w
